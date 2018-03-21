@@ -1,5 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 # import = import library NB: capital F!
+# render_template() = pass arguments through to tell Flask what HTML page to display
+# in Flask a template = HTML file
 app = Flask("myApp")
 # defining flask application called MyApp
 @app.route("/")
@@ -14,8 +16,20 @@ def exist():
 	return "Do I even exist tho?"
 
 @app.route("/Chloe")
-def name():
+def chloe():
 	return "Thats ma name bish"
+
+@app.route("/<name>")
+def hello_someone(name):
+	return render_template("hello.html", name=name.title())
+# <> = allows you to pass a variable in URL - can only use once
+
+@app.route("/signup", methods=["POST"])
+def sign_up():
+	form_data = request.form
+# now accessing a variable called request (in Flask), so we need to import it to use it - see top of page
+	print form_data["email"]
+	return "All OK"
 
 app.run(debug=True)
 # to run the application

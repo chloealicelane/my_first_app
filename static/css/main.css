@@ -1,0 +1,8 @@
+body, html {
+	background-image: url("/static/images/IMG_3097.jpg") ;
+	height: 100%;
+	background-attachment: fixed;
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: cover;
+}

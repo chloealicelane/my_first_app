@@ -1,0 +1,25 @@
+<!-- GET AND POST
+You’ll see in your Python and HTML code that GET and POST are
+request “methods” – method here just means the way that the request needs
+to be handled/sent (i.e. they’re not functions). GET is the default method in both Python and HTML for getting information
+from the server. The data from a GET request is shown in the URL in your
+browser. For example, @app.route(“/news”) is actually a GET request, just like
+typing bbc.co.uk/news into your browser and hitting enter. Both of these
+things are saying “hey server, get me this specific webpage”.
+You can submit a form using GET or POST. If you submit a form using GET,
+you’ll see the submitted form data in your URL bar in your browser.
+Sometimes that doesn’t matter (if you’re searching for a bookshelf on IKEA’s
+website, you might want to bookmark the results page). But there are other
+times, like if a visitor is submitting personal information through a form,
+when you need that information to be sent privately.
+The POST method is used to send data to the server so that it can be
+processed. It’s like saying “hey server, here’s some data for you to do stuff
+with”. In HTML, you can only make a POST request using a form. Information
+sent using the POST method doesn’t show in the URL bar, so it’s more
+private.
+Remember, when using a form, you need to specify the request type you’re
+using in the HTML form’s opening tag, and also in Python. Notice that in
+HTML, GET and POST methods are typed in lowercase, and in Python, they’re
+in uppercase.
+NB: GET is default so dont need to specify in python file
+-->

@@ -1,0 +1,33 @@
+<!doctype html>
+<!-- HTML code using Jinja2 syntax, a templating language that enables access values passed from your Python code-->
+<html>
+	<head>
+		<title>My Flask App Page</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for("static",
+		filename="css/main.css") }}">
+		<!-- how to link to CSS in your HTML file using Jinja2 -->
+		<link rel="stylesheet"
+		href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<!-- Link to jquery -->
+	</head>
+	<body>
+		{% if name %}
+		<!-- variables go inside {} -->
+			<p>Hello {{name}}!</p>
+		{% else %}
+			<p>Hello anonymous person!</p>
+		{% endif %}
+		<!-- end if ends this code so can get to the end of the body -->
+	</body>
+	<p> Let's keep in touch!</p>
+		<div id="contact-form">
+			<form method="post" action="/signup">
+				<!-- after “action” is the URL the form will be
+				submitted to, relative to the absolute URL you’re at, therefore we need a decorator in hello.py -->
+				<label for="email">Email address:</label>
+				<input type="email" id="email" name="email"
+				required="required">
+				<input type="submit" value="Submit" id="submitbutton">
+			</form>
+		</div>
+</html>
